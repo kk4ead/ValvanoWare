@@ -8,7 +8,8 @@ files (e.g. executables, PDFs, Keil and CCS projects, Excel spreadsheets)
 have been removed. Multiple licenses (all BSD-compatible) apply; see the
 [LICENSE][license] file for details.
 
-TODO: resolve [duplicate files][duplicates].
+Many files in this repository are duplicated. Some useful ones are symlinked
+into the include/ and src/ directories.
 
 [valvanoware]: http://users.ece.utexas.edu/~valvano/arm/
 [launchpad]: http://www.ti.com/tool/ek-tm4c123gxl
