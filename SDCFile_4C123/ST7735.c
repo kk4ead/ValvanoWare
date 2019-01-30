@@ -26,6 +26,7 @@
 // January 13, 2015
 // Augmented 7/17/2014 to have a simple graphics facility
 // Tested with LaunchPadDLL.dll simulator 9/2/2014
+// Modified January 30, 2019 by Clara Short <clarity@utexas.edu>
 
 /* This example accompanies the book
    "Embedded Systems: Real Time Interfacing to ARM Cortex M Microcontrollers",
@@ -551,14 +552,13 @@ void static writedata(unsigned char c) {
 
 // delay function from sysctl.c
 // which delays 3*ulCount cycles
-#ifdef __TI_COMPILER_VERSION__
+#if defined(__TI_COMPILER_VERSION__) || defined(__GNUC__) || defined(__clang__)
   //Code Composer Studio Code
   void Delay(uint32_t ulCount){
   __asm (  "    subs    r0, #1\n"
       "    bne     Delay\n"
       "    bx      lr\n");
 }
-
 #else
   //Keil uVision Code
   __asm void
@@ -1637,10 +1637,10 @@ int fgetc (FILE *f){
   return 0;
 }
 // Function called when file error occurs.
-int ferror(FILE *f){
+//int ferror(FILE *f){
   /* Your implementation of ferror */
-  return EOF;
-}
+//  return EOF;
+//}
 // Abstraction of general output device
 // Volume 2 section 3.4.5
 

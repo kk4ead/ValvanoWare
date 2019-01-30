@@ -7,6 +7,7 @@
 // created using the macros supplied at the end of the file.
 // Daniel Valvano
 // June 16, 2011
+// Modified January 30, 2019 by Clara Short <clarity@utexas.edu>
 
 /* This example accompanies the book
    "Embedded Systems: Real Time Interfacing to Arm Cortex M Microcontrollers",
@@ -48,7 +49,7 @@ int NAME ## Fifo_Put (TYPE data){       \
     return(FAIL);      \
   }                    \
   NAME ## Fifo[ NAME ## PutI &(SIZE-1)] = data; \
-  NAME ## PutI ## ++;  \
+  NAME ## PutI ++;  \
   return(SUCCESS);     \
 }                      \
 int NAME ## Fifo_Get (TYPE *datapt){  \
@@ -56,7 +57,7 @@ int NAME ## Fifo_Get (TYPE *datapt){  \
     return(FAIL);      \
   }                    \
   *datapt = NAME ## Fifo[ NAME ## GetI &(SIZE-1)];  \
-  NAME ## GetI ## ++;  \
+  NAME ## GetI ++;  \
   return(SUCCESS);     \
 }                      \
 unsigned short NAME ## Fifo_Size (void){  \
