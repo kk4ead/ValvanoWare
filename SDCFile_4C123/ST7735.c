@@ -1627,6 +1627,7 @@ void ST7735_OutString(char *ptr){
 void ST7735_SetTextColor(uint16_t color){
   StTextColor = color;
 }
+/*
 // Print a character to ST7735 LCD.
 int fputc(int ch, FILE *f){
   ST7735_OutChar(ch);
@@ -1636,6 +1637,7 @@ int fputc(int ch, FILE *f){
 int fgetc (FILE *f){
   return 0;
 }
+*/
 // Function called when file error occurs.
 //int ferror(FILE *f){
   /* Your implementation of ferror */
@@ -1649,11 +1651,12 @@ int fgetc (FILE *f){
 // Initialize ST7735 LCD
 // Inputs: none
 // Outputs: none
+/*
 void Output_Init(void){
   ST7735_InitR(INITR_REDTAB);
   ST7735_FillScreen(0);                 // set screen to black
 }
-
+*/
 // Clear display
 void Output_Clear(void){ // Clears the display
   ST7735_FillScreen(0);    // set screen to black
